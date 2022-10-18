@@ -1,12 +1,11 @@
-
-import './App.css';
-
-function App() {
+import './assets/scss/style.scss'
+import ImageContextProvider from './context/ImageContext/ImageContextProvider'
+import ImageLoad from './components/ImageLoad'
+const App =()=>{
   return (
-    <div className="App">
-      12312
-    </div>
-  );
+      <ImageContextProvider>
+       <ImageLoad></ImageLoad>
+      </ImageContextProvider>
+  )
 }
-
-export default App;
+export default App
