@@ -1,8 +1,6 @@
-import {createContext, useReducer } from "react"
-const initImage = {
-    path:'https://cdn.shopify.com/s/files/1/0598/7955/5231/files/KOL_2.jpg?v=1661654282',
-    name:'demo'
-}
+import {createContext, useEffect, useReducer } from "react"
+import useLocalStorage from "../../hooks/useLocalStorage";
+
 
 export const ImageStateContext = createContext();
 export const ImageDispatch= createContext();
@@ -24,7 +22,15 @@ const reducer = (state,action)=>{
     }
 }
 const ImageContextProvider =({children})=>{
+    const [imgState,setImgState] = useLocalStorage('imgUrl',null);
+    const initImage = {
+        path: imgState|| '',
+        name:'demo'
+    }
     const [state,dispath] = useReducer(reducer,initImage);
+    useEffect(()=>{
+        setImgState(state.path)
+    },[state.path])
     return (
         <ImageStateContext.Provider value={state}>
             <ImageDispatch.Provider value={dispath}>
