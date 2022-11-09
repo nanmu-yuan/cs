@@ -17,21 +17,15 @@ const AuthPage = ()=>{
     const history = useHistory();
 
     const signInSuccess = async (userData)=>{
-
         login(userData).then(res=>{
-            console.log(res)
               signIn(AuthDispatch,userData);
               history.push("/about")
-        })
-      
+        }) 
     }
     const schema =Yup.object().shape({
         username:Yup.string().max(10,'用户名的长度不能大于15').required('请输入用户名'),
         password:Yup.string().required('强输入密码')
     })      
-
-
-
     return(
         <Formik initialValues={initialValues} onSubmit=
         {async (values,{resetForm})=>{

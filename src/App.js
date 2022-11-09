@@ -6,9 +6,12 @@ import Message from './components/Message'
 import AuthLayout from './layouts/AuthLayout'
 import Auth from './pages/Auth'
 import AuthProivder from './context/Auth'
+import ProductProvider from './context/ProductProvider'
+import ProductList from './pages/ProductList'
 const App = () => {
   return (
     <AuthProivder>
+      <ProductProvider>
         <BrowserRouter>
           <Switch>
             <RouterWrapper
@@ -22,8 +25,14 @@ const App = () => {
               component={Message}
               layout={CommonLayout}
             />
+            <RouterWrapper
+              path="/list"
+              component={ProductList}
+              layout={CommonLayout}
+            />
           </Switch>
         </BrowserRouter>
+      </ProductProvider>
     </AuthProivder>
   )
 }
