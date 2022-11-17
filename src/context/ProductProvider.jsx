@@ -38,12 +38,16 @@ const ProductProvider =({children})=>{
 export default ProductProvider
 
 export const getProduct =(dispatch)=>{
-    queryProduct().then(res=>{
-        console.log(res)
+    const params = {
+        page_size:17,
+        page:1
+    }
+    queryProduct(params).then(res=>{
+        const {data:{results}} = res;
         dispatch({
             type:'QUERY_LIST',
             play:{
-                data:res
+                data:results
             }
         })
     })
