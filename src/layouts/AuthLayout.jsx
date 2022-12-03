@@ -1,6 +1,6 @@
 const AuthLayout =({children})=>{
     return(
-        <div className="container text-center">
+        <div id="auth">
             <div><span>LOGON</span></div>
             <div>{children}</div>
         </div>

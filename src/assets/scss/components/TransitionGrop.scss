@@ -1,0 +1,134 @@
+.TransitionGrop{
+    width: 30vw;
+    margin: 0 auto;
+    .changeBtn{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        .btn-l{
+            width: 50%;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 9px;
+            background-color: aquamarine;
+            text-align: center;
+        }
+        .btn-r{
+            width: 50%;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 9px;
+            background-color: aquamarine;
+            text-align: center;
+        }
+    }
+    .About{
+        width: 100%;
+        height: 300px;
+        background-color: bisque;
+
+    }
+    .Cs{
+        width: 100%;
+        height: 300px;
+        background: #666;
+    }
+}
+@media (max-width:768px) {
+  .TransitionGrop{
+    width: 100%;
+  }
+}
+/* src/App2/index.css */
+.fade-enter {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  
+  .fade-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    width: 80px;
+    height: 80px;
+    transition: all 2000ms;
+  }
+  
+  .fade-exit {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .fade-exit-active {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 2000ms;
+  }
+  .square{
+    width: 80px;
+    height: 80px;
+    background-color: red;
+  }
+//   
+
+
+.btn-enter {
+    transform: translate(0,100%);
+    opacity: 0;
+  }
+  
+  .btn-enter-active {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: all 500ms;
+  }
+  
+  .btn-exit {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  
+  .btn-exit-active {
+    transform: translate(0,-100%);
+    opacity: 0;
+    transition: all 500ms;
+  }
+  .bb1{
+    width: 100%;
+    height: 50px;
+    background: red;
+  }
+  .bb2{
+    width: 100%;;
+    height: 50px;
+    background-color: aquamarine;
+  }
+
+  /* 入场动画过程 */
+.dg-enter{
+    transform: translateX(200px)
+  }
+  .dg-enter-active{
+    transition: 2s;
+    transform: translateX(0px)
+  }
+  .dg-enter-done{
+    transform: translateX(0px)
+  }
+  /* 出场动画过程 */
+  .dg-exit{
+    transform: translateX(0px)
+  }
+  .dg-exit-active{
+    transition: 2s;
+    transform: translateX(200px)
+  }
+  .dg-exit-done{
+    transform: translateX(200px)
+  }
+  
+  .home, .user, .login, .animate{
+    position: absolute;
+    left: calc(50% - 200px)
+  }
+  
